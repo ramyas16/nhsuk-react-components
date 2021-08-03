@@ -17,7 +17,7 @@ export const renderNunjucksTemplate = async (templateName: string, params: objec
     return toDiffableHtml(nunjucks.renderString(templateNjks, { params }));
 }
 
-export const renderReact = (reactNode: JSX.Element): JSDOM => {
+export const renderReact = (reactNode: JSX.Element): string => {
     const domObject = new JSDOM('<div id="app" />');
     ReactDOM.render(reactNode, domObject.window.document.body.querySelector("#app"));
     return toDiffableHtml(domObject.window.document.body.querySelector("#app").innerHTML);
