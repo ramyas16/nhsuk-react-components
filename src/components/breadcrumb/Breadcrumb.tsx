@@ -3,9 +3,9 @@ import classNames from 'classnames';
 import { Container } from '../layout';
 import type { AsElementLink } from '../../util/types/LinkTypes';
 
-type Item = React.FC<AsElementLink<HTMLAnchorElement>>;
+type IItem = React.FC<AsElementLink<HTMLAnchorElement>>;
 
-const Item: Item = ({
+const Item: IItem = ({
   className, children, asElement: Component = 'a', ...rest
 }) => (
   <li className="nhsuk-breadcrumb__item">
@@ -15,15 +15,27 @@ const Item: Item = ({
   </li>
 );
 
-const Back: Item = ({ className, asElement: Component = 'a', ...rest }) => (
+interface BackProps extends AsElementLink<HTMLAnchorElement> {
+  prefixText?: string | null;
+}
+
+type IBack = React.FC<BackProps>;
+
+const Back: IBack = ({ className, asElement: Component = 'a', children, prefixText, ...rest }) => (
   <p className={classNames('nhsuk-breadcrumb__back', className)}>
-    <Component className="nhsuk-breadcrumb__backlink" {...rest} />
+    <Component className="nhsuk-breadcrumb__backlink" {...rest}>
+      {prefixText}{children}
+    </Component>
   </p>
 );
 
+Back.defaultProps = {
+  prefixText: "Back to "
+}
+
 interface Breadcrumb extends React.FC<HTMLProps<HTMLDivElement>> {
-  Item: Item;
-  Back: Item;
+  Item: IItem;
+  Back: IBack;
 }
 
 type SplitChildren = {

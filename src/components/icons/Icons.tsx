@@ -27,10 +27,10 @@ export const BaseIconSVG: React.FC<BaseIconSVGProps> = ({
   </svg>
 );
 
-BaseIconSVG.defaultProps = {
-  height: 32,
-  width: 32,
-};
+// BaseIconSVG.defaultProps = {
+//   height: 32,
+//   width: 32,
+// };
 
 export const ArrowLeft: React.FC<BaseIconSVGProps> = (props) => (
   <BaseIconSVG iconType="nhsuk-icon__arrow-left" {...props}>

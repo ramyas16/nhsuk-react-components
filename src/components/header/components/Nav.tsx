@@ -22,7 +22,8 @@ const Nav: React.FC<HTMLProps<HTMLDivElement>> = ({
         <p className="nhsuk-header__navigation-title">
           <span>Menu</span>
           <button className="nhsuk-header__navigation-close" type="button" onClick={toggleMenu}>
-            <CloseIcon />
+            {/* @ts-expect-error */}
+            <CloseIcon focusable="false" />
             <span className="nhsuk-u-visually-hidden">Close menu</span>
           </button>
         </p>

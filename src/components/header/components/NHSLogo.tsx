@@ -36,12 +36,10 @@ const NHSLogo: React.FC<NHSLogoNavProps> = ({
           className="nhsuk-logo"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          role="img"
+          role="presentation"
           focusable="false"
           viewBox="0 0 40 16"
-          aria-labelledby="nhsuk-logo_title"
         >
-          <title id="nhsuk-logo_title">{alt}</title>
           <path className="nhsuk-logo__background" d="M0 0h40v16H0z" />
           <path
             className="nhsuk-logo__text"

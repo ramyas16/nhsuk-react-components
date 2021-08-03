@@ -40,7 +40,7 @@ describe('Breadcrumb', () => {
     });
 
     expect(component.find('#otherElement').text()).toEqual('Test Element');
-    expect(component.find('.nhsuk-breadcrumb__back').text()).toBe('Back');
+    expect(component.find('.nhsuk-breadcrumb__back').text()).toBe('Back to Back');
   });
 
   it('passes through other children fine', () => {

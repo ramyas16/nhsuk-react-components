@@ -143,7 +143,7 @@ export const HeaderWithCustomNavItemComponent = (): JSX.Element => {
     <Header
       orgName="Anytown Anyplace"
       orgSplit="Anywhere"
-      orgDescriptor="NHS Foundation Trust"
+    orgDescriptor="NHS Foundation Trust"
       white
     >
       <Header.Container>
