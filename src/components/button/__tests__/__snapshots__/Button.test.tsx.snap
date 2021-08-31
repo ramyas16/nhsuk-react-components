@@ -13,7 +13,6 @@ exports[`Button adds correct classes for button types: DisabledButton 1`] = `
 
 exports[`Button adds correct classes for button types: ReverseButton 1`] = `
 <button
-  aria-disabled="false"
   className="nhsuk-button nhsuk-button--reverse"
   type="submit"
 >
@@ -23,7 +22,6 @@ exports[`Button adds correct classes for button types: ReverseButton 1`] = `
 
 exports[`Button adds correct classes for button types: SecondaryButton 1`] = `
 <button
-  aria-disabled="false"
   className="nhsuk-button nhsuk-button--secondary"
   type="submit"
 >
@@ -33,7 +31,6 @@ exports[`Button adds correct classes for button types: SecondaryButton 1`] = `
 
 exports[`Button matches snapshot: PlainButton 1`] = `
 <button
-  aria-disabled="false"
   className="nhsuk-button"
   type="submit"
 >
@@ -55,7 +52,6 @@ exports[`ButtonLink adds correct classes for button types: DisabledButton 1`] = 
 
 exports[`ButtonLink adds correct classes for button types: ReverseButton 1`] = `
 <a
-  aria-disabled="false"
   className="nhsuk-button nhsuk-button--reverse"
   draggable={false}
   href="/"
@@ -67,7 +63,6 @@ exports[`ButtonLink adds correct classes for button types: ReverseButton 1`] = `
 
 exports[`ButtonLink adds correct classes for button types: SecondaryButton 1`] = `
 <a
-  aria-disabled="false"
   className="nhsuk-button nhsuk-button--secondary"
   draggable={false}
   href="/"
@@ -79,7 +74,6 @@ exports[`ButtonLink adds correct classes for button types: SecondaryButton 1`] =
 
 exports[`ButtonLink matches snapshot: PlainButton 1`] = `
 <a
-  aria-disabled="false"
   className="nhsuk-button"
   draggable={false}
   href="/"

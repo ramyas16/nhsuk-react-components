@@ -1,9 +1,13 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, HTMLProps } from 'react';
 import classNames from 'classnames';
-import { Col } from '../../layout';
+import { ColWidth } from '../../../util/types/NHSUKTypes';
 
-const CardGroupItem: React.FC<ComponentProps<typeof Col>> = ({ className, ...rest }) => (
-  <Col className={classNames('nhsuk-card-group__item', className)} {...rest} />
+interface CardGroupItemProps extends HTMLProps<HTMLLIElement> {
+  width: ColWidth
+}
+
+const CardGroupItem: React.FC<CardGroupItemProps> = ({ className, width, ...rest }) => (
+  <li className={classNames(`nhsuk-grid-column-${width} nhsuk-card-group__item`, className)} {...rest} />
 );
 
 export default CardGroupItem;

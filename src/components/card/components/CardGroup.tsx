@@ -1,9 +1,8 @@
 import React, { HTMLProps } from 'react';
 import classNames from 'classnames';
-import { Row } from '../../layout';
 
-const CardGroup: React.FC<HTMLProps<HTMLDivElement>> = ({ className, ...rest }) => (
-  <Row className={classNames('nhsuk-card-group', className)} {...rest} />
+const CardGroup: React.FC<HTMLProps<HTMLUListElement>> = ({ className, ...rest }) => (
+  <ul className={classNames('nhsuk-grid-row nhsuk-card-group', className)} {...rest} />
 );
 
 export default CardGroup;

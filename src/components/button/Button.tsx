@@ -21,6 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   secondary,
   reverse,
+  type,
   ...rest
 }) => (
   // eslint-disable-next-line react/button-has-type
@@ -32,8 +33,9 @@ export const Button: React.FC<ButtonProps> = ({
       { 'nhsuk-button--reverse': reverse },
       className,
     )}
+    type={type}
     disabled={disabled}
-    aria-disabled={disabled ? 'true' : 'false'}
+    aria-disabled={disabled ? 'true' : rest["aria-disabled"]}
     {...rest}
   />
 );
@@ -44,12 +46,12 @@ Button.defaultProps = {
 
 export const ButtonLink: React.FC<ButtonLinkProps> = ({
   className,
-  role,
-  draggable,
   children,
   disabled,
   secondary,
   reverse,
+  href,
+  role,
   ...rest
 }) => (
   <a
@@ -61,8 +63,8 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
       className,
     )}
     role={role}
-    aria-disabled={disabled ? 'true' : 'false'}
-    draggable={draggable}
+    href={href}
+    aria-disabled={disabled ? 'true' : rest["aria-disabled"]}
     {...rest}
   >
     {children}

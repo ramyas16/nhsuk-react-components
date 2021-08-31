@@ -1,7 +1,7 @@
-import React, { HTMLProps } from 'react';
+import React, { SVGProps } from 'react';
 import classNames from 'classnames';
 
-interface BaseIconSVGProps extends HTMLProps<SVGSVGElement> {
+interface BaseIconSVGProps extends SVGProps<SVGSVGElement> {
   iconType?: string;
   crossOrigin?: '' | 'anonymous' | 'use-credentials';
 }
@@ -9,8 +9,7 @@ interface BaseIconSVGProps extends HTMLProps<SVGSVGElement> {
 export const BaseIconSVG: React.FC<BaseIconSVGProps> = ({
   className,
   children,
-  height,
-  width,
+  fill,
   iconType,
   ...rest
 }) => (
@@ -18,19 +17,13 @@ export const BaseIconSVG: React.FC<BaseIconSVGProps> = ({
     className={classNames('nhsuk-icon', iconType, className)}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
+    fill={fill}
     aria-hidden="true"
-    height={height}
-    width={width}
     {...rest}
   >
     {children}
   </svg>
 );
-
-// BaseIconSVG.defaultProps = {
-//   height: 32,
-//   width: 32,
-// };
 
 export const ArrowLeft: React.FC<BaseIconSVGProps> = (props) => (
   <BaseIconSVG iconType="nhsuk-icon__arrow-left" {...props}>
@@ -123,12 +116,13 @@ export const Search: React.FC<BaseIconSVGProps> = (props) => (
 );
 
 export const Tick: React.FC<BaseIconSVGProps> = (props) => (
-  <BaseIconSVG iconType="nhsuk-icon__tick" {...props}>
+  <BaseIconSVG iconType="nhsuk-icon__tick" fill="none" {...props}>
     <path
       strokeWidth="4"
       strokeLinecap="round"
-      stroke="#007f3b"
-      fill="none"
+      // stroke="#007f3b"
+
+
       d="M18.4 7.8l-8.5 8.4L5.6 12"
     />
   </BaseIconSVG>

@@ -6,7 +6,7 @@ interface ContentsListItemProps extends HTMLProps<HTMLAnchorElement> {
 }
 
 const ContentsListItem: React.FC<ContentsListItemProps> = ({ className, current, ...rest }) => (
-  <li className={classNames('nhsuk-contents-list__item', className)}>
+  <li className={classNames('nhsuk-contents-list__item', className)} aria-current={current ? "page" : rest["aria-current"]}>
     {current ? (
       <span className="nhsuk-contents-list__current" {...rest} />
     ) : (
@@ -20,13 +20,13 @@ interface ContentsListProps extends HTMLProps<HTMLDivElement> {
 }
 
 interface ContentsList extends React.FC<ContentsListProps> {
-  Item: React.FC<ContentsListItemProps>;
+  Item: typeof ContentsListItem;
 }
 
 const ContentsList: ContentsList = ({
-  className, children, visuallyHiddenText, ...rest
+  className, children, visuallyHiddenText, role, ...rest
 }) => (
-  <nav className={classNames('nhsuk-contents-list', className)} {...rest}>
+  <nav className={classNames('nhsuk-contents-list', className)} role={role} {...rest}>
     {visuallyHiddenText !== false ? (
       <h2 className="nhsuk-u-visually-hidden">{visuallyHiddenText}</h2>
     ) : null}

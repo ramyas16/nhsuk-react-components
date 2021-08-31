@@ -8,7 +8,7 @@ interface CardImageProps extends HTMLProps<HTMLImageElement> {
 }
 
 const CardImage: React.FC<CardImageProps> = ({ className, alt, ...rest }) => (
-  <img className={classNames('nhsuk-card__img', className)} alt={alt} {...rest} />
+  <img className={classNames('nhsuk-card__img', className)} {...rest} alt={alt} />
 );
 
 export default CardImage;
